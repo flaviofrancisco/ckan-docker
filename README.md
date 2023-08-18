@@ -263,3 +263,21 @@ could be used instead of ckan/ckan-base:2.10.1
 ## 15. Replacing DataPusher with XLoader
 
 Check out the wiki page for this: https://github.com/ckan/ckan-docker/wiki/Replacing-DataPusher-with-XLoader
+
+## 16. Extra steps
+
+You may need to run the db container scripts located in the folder: docker-entrypoint-initdb.d manually.
+
+```
+$ docker exec -it db bash
+```
+
+```
+$ cd docker-entrypoint-initdb.d/
+```
+
+```
+. 10_create_ckandb.sh
+. 20_create_datastore.sh
+. 30_setup_test_databases.sh
+```
